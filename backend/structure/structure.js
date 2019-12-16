@@ -1,5 +1,6 @@
 import EyeIcon from 'part:@sanity/base/eye-icon';
 import EditIcon from 'part:@sanity/base/edit-icon';
+import { FaFacebookSquare } from 'react-icons/fa';
 import TelenorFacebookPreview from '../plugins/TelenorFacebookPreview';
 import S from '@sanity/desk-tool/structure-builder';
 
@@ -8,7 +9,8 @@ export default () =>
     .title('Content')
     .items([
       S.listItem()
-        .title('Settings')
+        .title('Telenor Open Graph')
+        .icon(FaFacebookSquare)
         .child(
           S.editor()
             .schemaType('telenorFacebook')

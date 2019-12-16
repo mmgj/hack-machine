@@ -9,8 +9,7 @@ const renderCode = ({
   ogUrl,
   ogDescription,
   ogImageUrl,
-}) => `
-<meta property="og:title" content="${ogTitle}" />
+}) => `<meta property="og:title" content="${ogTitle}" />
 <meta property="og:site_name" content="${ogSiteName}" />
 <meta property="og:url" content="${ogUrl}" />
 <meta property="og:description" content="${ogDescription}" />
@@ -20,22 +19,14 @@ const renderCode = ({
 <meta property="og:type" content="article" />
 `;
 
-function syntax() {
-  console.log('DIDIT!');
-  Prism.highlightAll();
-}
-
 function TelenorFacebookPreview({ options, document }) {
   useEffect(() => {
-    syntax();
+    Prism.highlightAll();
   });
   return (
-    <div>
-      <button onClick={() => syntax()}>Click</button>
-      <pre>
-        <code className="language-html-markup">
-          {renderCode(document.displayed)}
-        </code>
+    <div style={{ padding: 15 }}>
+      <pre style={{ padding: 20 }}>
+        <code className="language-html">{renderCode(document.displayed)}</code>
       </pre>
     </div>
   );
